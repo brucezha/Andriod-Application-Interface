@@ -10,11 +10,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.widget.LinearLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, BookIconView.BookIconListener {
+
+    private static final String TAG = "MainActivity";
+
+    private LinearLayout searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +37,19 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        searchView = (LinearLayout) findViewById(R.id.search_view);
+        searchView.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        if(searchView.getVisibility() == View.VISIBLE) {
+            searchView.setVisibility(View.INVISIBLE);
+        }
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -59,6 +73,11 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.search) {
+            if(searchView.getVisibility() == View.INVISIBLE) {
+                searchView.setVisibility(View.VISIBLE);
+            } else {
+                searchView.setVisibility(View.INVISIBLE);
+            }
             return true;
         }
 
@@ -74,13 +93,18 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_profile) {
-
+            // TODO start profile activity
         } else if (id == R.id.nav_settings) {
-
+            // TODO start settings activity
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void onBookClicked(BookIconView book) {
+        // TODO start book detail activity
+        Log.d(TAG, "Book clicked");
     }
 }
