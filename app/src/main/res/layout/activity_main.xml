@@ -13,7 +13,7 @@
     <!--everything from start to the last EditText is inside relative layout-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="450dp"
         android:layout_marginTop="5dp">
         <!--component for enter online id -->
 
@@ -53,18 +53,13 @@
             android:layout_below="@+id/CurrentLocation"
             />
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="5dp">
-        <!--component for enter online id -->
 
         <TextView
             android:id="@+id/CurrentPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/Location"
+            android:layout_marginTop="10dp"
             android:textSize="20dp"
             android:text="Your phone number:"
             />
@@ -97,20 +92,12 @@
             android:layout_below="@+id/CurrentPhoneNumber"
             />
 
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_marginTop="15dp">
-        <!--component for enter online id -->
-
         <TextView
             android:id="@+id/CurrentPayment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/PhoneNumber"
+            android:layout_marginTop="20dp"
             android:textSize="20dp"
             android:text="Payment:"
             />
@@ -234,19 +221,13 @@
             android:layout_marginRight="10dp"
             android:layout_below="@+id/BillingAddress"
             />
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="5dp">
 
         <TextView
             android:id="@+id/DeliverySetting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/BillingAddress2"
+            android:layout_marginTop="20dp"
             android:textSize="20dp"
             android:text="Delivery Setting:"
             />
@@ -278,7 +259,6 @@
             android:layout_marginRight="10dp"
             android:layout_below="@+id/DeliverySetting"
             />
-
     </RelativeLayout>
 
 
