@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity{
+
     //step1 : create edit text variable
     private EditText loc;
     private Button b1;
@@ -36,6 +37,9 @@ public class SettingActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         //step2 : fetch edit text from xml file.
         loc = (EditText) findViewById(R.id.Location);
         b1 = (Button) findViewById(R.id.button1);

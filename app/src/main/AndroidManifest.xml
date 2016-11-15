@@ -11,7 +11,9 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".SettingActivity">
+        <activity
+            android:name=".SettingActivity"
+            android:label="         Setting Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
