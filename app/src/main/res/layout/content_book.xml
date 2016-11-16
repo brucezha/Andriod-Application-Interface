@@ -12,5 +12,108 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="cs465.lendr.BookActivity"
     tools:showIn="@layout/app_bar_book">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kafka on the Shore"
+                    android:gravity="center_horizontal"
+                    android:textSize="32dp"/>
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Haruki Murakami"
+                    android:textSize="24dp"/>
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(isbn - 9789621785633)"
+                    android:textSize="12dp"/>
+                <RatingBar
+                    android:paddingTop="6dp"
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize=".1"
+                    android:rating="4.2"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                >
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="In Stock"
+                    android:textSize="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="20dp"
+                    />
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text=""
+                    android:textSize="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="180dp"
+                    android:background="@android:color/black"
+                    android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+
+                    android:onClick="backToMain"
+                    android:text="Order"
+                    android:textSize="11dp"
+
+                    android:textAlignment="center"
+                    />
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:text="Read"
+                    android:textSize="11dp"
+                    android:onClick="toRead"
+                    android:textAlignment="center"
+
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
 
 </RelativeLayout>
