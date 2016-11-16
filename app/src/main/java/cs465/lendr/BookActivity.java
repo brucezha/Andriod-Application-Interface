@@ -1,5 +1,6 @@
 package cs465.lendr;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class BookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +34,23 @@ public class BookActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button order_button = (Button) findViewById(R.id.order_button);
+        Button read_button = (Button) findViewById(R.id.read_button);
+
+        order_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Intent intent = new Intent(this, ProfileActivity.class);
+                //startActivity(intent);
+            }
+        });
+
+        read_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Intent intent = new Intent(this, InAppReadingActivity.class);
+                //startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -58,10 +77,6 @@ public class BookActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -72,18 +87,16 @@ public class BookActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_home) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_profile) {
+            // TODO start profile activity
+            //Intent intent = new Intent(this, ProfileActivity.class);
+            //startActivity(intent);
+        } else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(this, SettingActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

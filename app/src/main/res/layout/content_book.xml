@@ -82,7 +82,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="180dp"
-                    android:background="@android:color/black"
+                    android:src="@drawable/book_1"
                     android:layout_centerHorizontal="true"/>
 
             </RelativeLayout>
@@ -92,6 +92,7 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <Button
+                    android:id="@+id/order_button"
                     android:layout_width="200dp"
                     android:layout_height="0dp"
                     android:layout_weight=".5"
@@ -103,6 +104,7 @@
                     android:textAlignment="center"
                     />
                 <Button
+                    android:id="@+id/read_button"
                     android:layout_width="200dp"
                     android:layout_height="0dp"
                     android:layout_weight=".5"

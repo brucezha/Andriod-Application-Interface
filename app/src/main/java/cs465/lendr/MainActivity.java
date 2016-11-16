@@ -14,6 +14,7 @@ import android.util.Log;
 import android.widget.LinearLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BookIconView.BookIconListener {
@@ -91,11 +92,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_profile) {
             // TODO start profile activity
+            //Intent intent = new Intent(this, ProfileActivity.class);
+            //startActivity(intent);
         } else if (id == R.id.nav_settings) {
-            // TODO start settings activity
+            Intent intent = new Intent(this, SettingActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -104,9 +108,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onBookClicked(BookIconView book) {
-        // TODO start book detail activity
         Log.d(TAG, "Book clicked");
+        Intent intent = new Intent(this, BookActivity.class);
+        startActivity(intent);
     }
 }
-
-
