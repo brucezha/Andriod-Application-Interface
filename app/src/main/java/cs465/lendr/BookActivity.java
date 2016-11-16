@@ -59,10 +59,11 @@ public class BookActivity extends AppCompatActivity
     public void onClick(View v) {
         if(v == order_button) {
             Intent intent = new Intent(this, ProfileActivity.class);
+            intent.putExtra("ORDERED", "Kafka on the Shore");
             startActivity(intent);
         } else if(v == read_button) {
-            //Intent intent = new Intent(this, InAppReadingActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, InAppActivity.class);
+            startActivity(intent);
         }
     }
 

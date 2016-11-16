@@ -35,6 +35,15 @@
         </activity>
 
         <activity
+            android:name=".InAppActivity"
+            android:label="In-App Reading"
+            android:parentActivityName=".BookActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs465.lendr.BookActivity" />
+        </activity>
+
+        <activity
             android:name=".BookActivity"
             android:label="@string/title_activity_book"
             android:parentActivityName=".MainActivity"

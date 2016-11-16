@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity
     implements BookIconView.BookIconListener, NavigationView.OnNavigationItemSelectedListener {
@@ -20,6 +21,12 @@ public class ProfileActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        Intent intent = getIntent();
+        if(intent.hasExtra("ORDERED")) {
+            String bookName = intent.getStringExtra("ORDERED");
+            Toast.makeText(this, "Ordered: " + bookName + "!", Toast.LENGTH_SHORT).show();
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
