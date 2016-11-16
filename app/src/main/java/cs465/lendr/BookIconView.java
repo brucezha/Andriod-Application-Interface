@@ -2,9 +2,9 @@ package cs465.lendr;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.util.Log;
 
 /**
  * TODO: document your custom view class.

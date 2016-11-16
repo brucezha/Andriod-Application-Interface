@@ -1,10 +1,9 @@
 package cs465.lendr;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,30 +11,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, BookIconView.BookIconListener {
-
-    private static final String TAG = "MainActivity";
-
-    private LinearLayout searchView;
-
-    private SearchResult searchResult;
-
-    private EditText searchBar;
+public class BookActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_book);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -46,40 +35,27 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        searchView = (LinearLayout) findViewById(R.id.search_view);
-        searchView.setVisibility(View.INVISIBLE);
+        Button order_button = (Button) findViewById(R.id.order_button);
+        Button read_button = (Button) findViewById(R.id.read_button);
 
-        searchResult = (SearchResult) findViewById(R.id.search_result);
-        searchResult.setVisibility(View.INVISIBLE);
-
-        searchBar = (EditText) findViewById(R.id.search_bar);
-        searchBar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                searchResult.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
+        order_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Intent intent = new Intent(this, ProfileActivity.class);
+                //startActivity(intent);
             }
         });
 
+        read_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Intent intent = new Intent(this, InAppReadingActivity.class);
+                //startActivity(intent);
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        if(searchView.getVisibility() == View.VISIBLE) {
-            searchView.setVisibility(View.INVISIBLE);
-        }
-
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -90,7 +66,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.book, menu);
         return true;
     }
 
@@ -101,15 +77,6 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.search) {
-            if(searchView.getVisibility() == View.INVISIBLE) {
-                searchView.setVisibility(View.VISIBLE);
-            } else {
-                searchView.setVisibility(View.INVISIBLE);
-            }
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -121,7 +88,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_profile) {
             // TODO start profile activity
             //Intent intent = new Intent(this, ProfileActivity.class);
@@ -136,9 +104,14 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void onBookClicked(BookIconView book) {
-        Log.d(TAG, "Book clicked");
-        Intent intent = new Intent(this, BookActivity.class);
+    public void backToMain(View view)
+    {
+        android.content.Intent intent = new android.content.Intent(BookActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void toRead(View view)
+    {
+        android.content.Intent intent = new android.content.Intent(BookActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
