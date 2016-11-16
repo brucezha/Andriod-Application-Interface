@@ -1,4 +1,4 @@
-package com.brucezha.inappreading;
+package cs465.lendr;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -12,12 +12,12 @@ import android.widget.TextView;
  * Created by Yunshang on 11/16/16.
  */
 
-public class customSwipe extends PagerAdapter{
+public class CustomSwipe extends PagerAdapter{
     private int [] imageResources ={R.drawable.image1,R.drawable.image2};
     private Context ctx;
     private LayoutInflater layoutInflater;
 
-    public customSwipe(Context c) {
+    public CustomSwipe(Context c) {
         ctx=c;
     }
 
