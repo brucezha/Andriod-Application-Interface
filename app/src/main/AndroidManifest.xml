@@ -10,15 +10,19 @@
         android:theme="@style/AppTheme.NoActionBar">
 
         <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".ProfileActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
 
+        <activity
+            android:name=".ProfileActivity"
+            android:label="My Library"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs465.lendr.MainActivity" />
         </activity>
 
         <activity

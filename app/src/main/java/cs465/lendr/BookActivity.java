@@ -16,7 +16,10 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class BookActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    Button order_button;
+    Button read_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,22 +38,11 @@ public class BookActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button order_button = (Button) findViewById(R.id.order_button);
-        Button read_button = (Button) findViewById(R.id.read_button);
+        order_button = (Button) findViewById(R.id.order_button);
+        read_button = (Button) findViewById(R.id.read_button);
 
-        order_button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //Intent intent = new Intent(this, ProfileActivity.class);
-                //startActivity(intent);
-            }
-        });
-
-        read_button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //Intent intent = new Intent(this, InAppReadingActivity.class);
-                //startActivity(intent);
-            }
-        });
+        order_button.setOnClickListener(this);
+        read_button.setOnClickListener(this);
     }
 
     @Override
@@ -60,6 +52,17 @@ public class BookActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == order_button) {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
+        } else if(v == read_button) {
+            //Intent intent = new Intent(this, InAppReadingActivity.class);
+            //startActivity(intent);
         }
     }
 
@@ -91,9 +94,8 @@ public class BookActivity extends AppCompatActivity
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_profile) {
-            // TODO start profile activity
-            //Intent intent = new Intent(this, ProfileActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(this, SettingActivity.class);
             startActivity(intent);
@@ -102,16 +104,5 @@ public class BookActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void backToMain(View view)
-    {
-        android.content.Intent intent = new android.content.Intent(BookActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
-    public void toRead(View view)
-    {
-        android.content.Intent intent = new android.content.Intent(BookActivity.this, MainActivity.class);
-        startActivity(intent);
     }
 }
