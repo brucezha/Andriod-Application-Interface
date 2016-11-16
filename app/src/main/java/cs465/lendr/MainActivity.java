@@ -76,12 +76,10 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        if(searchView.getVisibility() == View.VISIBLE) {
-            searchView.setVisibility(View.INVISIBLE);
-        }
-
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if(searchView.getVisibility() == View.VISIBLE) {
+            searchView.setVisibility(View.INVISIBLE);
         } else {
             super.onBackPressed();
         }
@@ -123,9 +121,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_profile) {
-            // TODO start profile activity
-            //Intent intent = new Intent(this, ProfileActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(this, SettingActivity.class);
             startActivity(intent);

@@ -17,6 +17,15 @@
         </activity>
 
         <activity
+            android:name=".ProfileActivity"
+            android:label="My Library"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs465.lendr.MainActivity" />
+        </activity>
+
+        <activity
             android:name=".SettingActivity"
             android:label="Settings"
             android:parentActivityName=".MainActivity" >

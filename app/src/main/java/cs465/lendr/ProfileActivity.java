@@ -1,33 +1,28 @@
 package cs465.lendr;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Button;
 
-public class BookActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class ProfileActivity extends AppCompatActivity
+    implements BookIconView.BookIconListener, NavigationView.OnNavigationItemSelectedListener {
 
-    Button order_button;
-    Button read_button;
+    private static final String TAG = "ProfileActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book);
+        setContentView(R.layout.activity_profile);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -37,12 +32,13 @@ public class BookActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
-        order_button = (Button) findViewById(R.id.order_button);
-        read_button = (Button) findViewById(R.id.read_button);
 
-        order_button.setOnClickListener(this);
-        read_button.setOnClickListener(this);
+    public void onBookClicked(BookIconView book) {
+        Log.d(TAG, "Book clicked");
+        Intent intent = new Intent(this, BookActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -55,35 +51,6 @@ public class BookActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        if(v == order_button) {
-            Intent intent = new Intent(this, ProfileActivity.class);
-            startActivity(intent);
-        } else if(v == read_button) {
-            //Intent intent = new Intent(this, InAppReadingActivity.class);
-            //startActivity(intent);
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.book, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -94,8 +61,7 @@ public class BookActivity extends AppCompatActivity
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(this, ProfileActivity.class);
-            startActivity(intent);
+
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(this, SettingActivity.class);
             startActivity(intent);
