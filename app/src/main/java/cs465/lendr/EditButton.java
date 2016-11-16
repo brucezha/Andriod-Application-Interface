@@ -19,6 +19,8 @@ public class EditButton extends Button implements View.OnClickListener {
 
     private EditText editText;
 
+    private boolean isEditMode = false;
+
 
     public EditButton(Context context) {
         super(context);
@@ -42,15 +44,24 @@ public class EditButton extends Button implements View.OnClickListener {
 
     public void setEditText(EditText editText) {
         this.editText = editText;
+        setEditMode(isEditMode);
+    }
+
+    private void setEditMode(boolean editMode) {
+        isEditMode = editMode;
+
+        editText.setFocusable(isEditMode);
+        editText.setFocusableInTouchMode(isEditMode);
+        editText.setCursorVisible(isEditMode);
+        editText.setClickable(isEditMode);
+        editText.setEnabled(isEditMode);
+
+        setText((isEditMode == true) ? "SAVE" : "EDIT");
     }
     
     public void onClick(View v) {
         if(editText == null) return;
 
-        editText.setFocusable(true);
-        editText.setCursorVisible(true);
-        editText.setClickable(true);
-        editText.isEnabled();
-        editText.setFocusableInTouchMode(true);
+        setEditMode(!isEditMode);
     }
 }

@@ -45,8 +45,8 @@
             />
 
         <!--component for checkbox next to password-->
-        <Button
-            android:id="@+id/button1"
+        <cs465.lendr.EditButton
+            android:id="@+id/EditButton1"
             android:text="Edit"
             android:textSize="10dp"
             android:layout_width="match_parent"
@@ -84,8 +84,8 @@
             />
 
         <!--component for checkbox next to password-->
-        <Button
-            android:id="@+id/button2"
+        <cs465.lendr.EditButton
+            android:id="@+id/EditButton2"
             android:text="Edit"
             android:textSize="10dp"
             android:layout_width="match_parent"
@@ -134,8 +134,8 @@
             />
 
         <!--component for checkbox next to password-->
-        <Button
-            android:id="@+id/button3"
+        <cs465.lendr.EditButton
+            android:id="@+id/EditButton3"
             android:text="Edit"
             android:textSize="10dp"
             android:layout_width="match_parent"
@@ -174,8 +174,8 @@
             />
 
         <!--component for checkbox next to password-->
-        <Button
-            android:id="@+id/button4"
+        <cs465.lendr.EditButton
+            android:id="@+id/EditButton4"
             android:text="Edit"
             android:textSize="10dp"
             android:layout_width="match_parent"
@@ -214,8 +214,8 @@
             />
 
         <!--component for checkbox next to password-->
-        <Button
-            android:id="@+id/button5"
+        <cs465.lendr.EditButton
+            android:id="@+id/EditButton5"
             android:text="Edit"
             android:textSize="10dp"
             android:layout_width="match_parent"
@@ -252,8 +252,8 @@
             />
 
         <!--component for checkbox next to password-->
-        <Button
-            android:id="@+id/button6"
+        <cs465.lendr.EditButton
+            android:id="@+id/EditButton6"
             android:text="Edit"
             android:textSize="10dp"
             android:layout_width="match_parent"

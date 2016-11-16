@@ -140,11 +140,22 @@
                 android:src="@drawable/ic_search"/>
 
             <EditText
+                android:id="@+id/search_bar"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textColor="#ffffff"/>
 
         </LinearLayout>
+
+        <cs465.lendr.SearchResult
+            android:id="@+id/search_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kafka on the Shore"
+            android:layout_marginTop="20dp"
+            android:textColor="#ffffffff"
+            android:textSize="24sp"/>
 
     </LinearLayout>
 
