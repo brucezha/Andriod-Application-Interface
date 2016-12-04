@@ -97,8 +97,9 @@
                     android:layout_height="0dp"
                     android:layout_weight=".5"
                     android:text="Order"
+                    android:background="#c6d166"
                     android:textSize="11dp"
-
+                    android:textColor="#FFFFFF"
                     android:textAlignment="center"
                     />
                 <Button
@@ -106,7 +107,9 @@
                     android:layout_width="200dp"
                     android:layout_height="0dp"
                     android:layout_weight=".5"
+                    android:background="#9B4F0F"
                     android:text="Read"
+                    android:textColor="#FFFFFF"
                     android:textSize="11dp"
                     android:textAlignment="center"
                     />
