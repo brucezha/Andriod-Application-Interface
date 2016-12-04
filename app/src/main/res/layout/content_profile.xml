@@ -23,6 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Books You Have"
+            android:textStyle="bold|italic"
+            android:textColor="#5c821a"
             android:paddingLeft="10dp"/>
 
         <LinearLayout
@@ -69,6 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Books On The Way"
+            android:textStyle="bold|italic"
+            android:textColor="#5c821a"
             android:paddingLeft="10dp"/>
 
         <LinearLayout
@@ -115,6 +119,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Books You've Read"
+            android:textStyle="bold|italic"
+            android:textColor="#5c821a"
             android:paddingLeft="10dp"/>
 
         <LinearLayout
