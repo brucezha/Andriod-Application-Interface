@@ -27,6 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Continue Reading"
+            android:textStyle="bold|italic"
+            android:textColor="#5c821a"
             android:paddingLeft="10dp"/>
 
         <LinearLayout
@@ -73,6 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Recommended"
+            android:textStyle="bold|italic"
+            android:textColor="#5c821a"
             android:paddingLeft="10dp"/>
 
         <LinearLayout

@@ -16,7 +16,7 @@
     <!--everything from start to the last EditText is inside relative layout-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="440dp"
         android:layout_marginTop="5dp">
         <!--component for enter online id -->
 
@@ -41,18 +41,6 @@
             android:cursorVisible="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:layout_below="@+id/CurrentLocation"
-            />
-
-        <!--component for checkbox next to password-->
-        <cs465.lendr.EditButton
-            android:id="@+id/EditButton1"
-            android:text="Edit"
-            android:textSize="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_toRightOf="@id/Location"
-            android:layout_marginRight="10dp"
             android:layout_below="@+id/CurrentLocation"
             />
 
@@ -83,24 +71,13 @@
             android:layout_below="@+id/CurrentPhoneNumber"
             />
 
-        <!--component for checkbox next to password-->
-        <cs465.lendr.EditButton
-            android:id="@+id/EditButton2"
-            android:text="Edit"
-            android:textSize="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_toRightOf="@id/PhoneNumber"
-            android:layout_marginRight="10dp"
-            android:layout_below="@+id/CurrentPhoneNumber"
-            />
 
         <TextView
             android:id="@+id/CurrentPayment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/PhoneNumber"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:textSize="20dp"
             android:text="Payment:"
             />
@@ -111,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/CurrentPayment"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
 
             android:textSize="17dp"
             android:text="Card:"
@@ -133,17 +110,6 @@
             android:layout_below="@+id/Card"
             />
 
-        <!--component for checkbox next to password-->
-        <cs465.lendr.EditButton
-            android:id="@+id/EditButton3"
-            android:text="Edit"
-            android:textSize="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_toRightOf="@id/CardNumber"
-            android:layout_marginRight="10dp"
-            android:layout_below="@+id/Card"
-            />
 
         <TextView
             android:id="@+id/NameOnCard"
@@ -170,18 +136,6 @@
             android:cursorVisible="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:layout_below="@+id/NameOnCard"
-            />
-
-        <!--component for checkbox next to password-->
-        <cs465.lendr.EditButton
-            android:id="@+id/EditButton4"
-            android:text="Edit"
-            android:textSize="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_toRightOf="@id/Name"
-            android:layout_marginRight="10dp"
             android:layout_below="@+id/NameOnCard"
             />
 
@@ -213,24 +167,13 @@
             android:layout_below="@+id/BillingAddress"
             />
 
-        <!--component for checkbox next to password-->
-        <cs465.lendr.EditButton
-            android:id="@+id/EditButton5"
-            android:text="Edit"
-            android:textSize="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_toRightOf="@id/Name"
-            android:layout_marginRight="10dp"
-            android:layout_below="@+id/BillingAddress"
-            />
 
         <TextView
             android:id="@+id/DeliverySetting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/BillingAddress2"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:textSize="20dp"
             android:text="Delivery Setting:"
             />
@@ -253,18 +196,30 @@
 
         <!--component for checkbox next to password-->
         <cs465.lendr.EditButton
-            android:id="@+id/EditButton6"
+            android:id="@+id/EditButton1"
             android:text="Edit"
             android:textSize="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_toRightOf="@id/DeliverySetting2"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="3dp"
+            android:textColor="#FFFFFF"
             android:layout_marginRight="10dp"
-            android:layout_below="@+id/DeliverySetting"
+            android:layout_marginLeft="120dp"
+            android:background="#c6d166"
+            android:layout_below="@+id/DeliverySetting2"
             />
+
     </RelativeLayout>
 
-
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="28dp"
+        android:text = "End Subscription"
+        android:textSize="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="120dp"
+        android:background="#9B4F0F"
+        />
 </LinearLayout>
 
 

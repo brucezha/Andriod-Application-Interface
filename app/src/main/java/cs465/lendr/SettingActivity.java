@@ -27,19 +27,19 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
     private EditButton b1;
 
     private EditText pn;
-    private EditButton b2;
+    //private EditButton b2;
 
     private EditText cn;
-    private EditButton b3;
+    //private EditButton b3;
 
     private EditText name;
-    private EditButton b4;
+    //private EditButton b4;
 
     private EditText ba;
-    private EditButton b5;
+    //private EditButton b5;
 
     private EditText ds;
-    private EditButton b6;
+    //private EditButton b6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,29 +64,29 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
         b1.setEditText(loc);
 
         pn = (EditText) findViewById(R.id.PhoneNumber);
-        b2 = (EditButton) findViewById(R.id.EditButton2);
+        //b2 = (EditButton) findViewById(R.id.EditButton2);
 
-        b2.setEditText(pn);
+        //b2.setEditText(pn);
 
         cn = (EditText) findViewById(R.id.CardNumber);
-        b3 = (EditButton) findViewById(R.id.EditButton3);
+        //b3 = (EditButton) findViewById(R.id.EditButton3);
 
-        b3.setEditText(cn);
+        //b3.setEditText(cn);
 
         name = (EditText) findViewById(R.id.Name);
-        b4 = (EditButton) findViewById(R.id.EditButton4);
+        //b4 = (EditButton) findViewById(R.id.EditButton4);
 
-        b4.setEditText(name);
+        //b4.setEditText(name);
 
         ba = (EditText) findViewById(R.id.BillingAddress2);
-        b5 = (EditButton) findViewById(R.id.EditButton5);
+        //b5 = (EditButton) findViewById(R.id.EditButton5);
 
-        b5.setEditText(ba);
+        //b5.setEditText(ba);
 
         ds = (EditText) findViewById(R.id.DeliverySetting2);
-        b6 = (EditButton) findViewById(R.id.EditButton6);
+        //b6 = (EditButton) findViewById(R.id.EditButton6);
 
-        b6.setEditText(ds);
+        //b6.setEditText(ds);
     }
 
     @Override
