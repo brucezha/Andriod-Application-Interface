@@ -11,13 +11,15 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * TODO: document your custom view class.
  */
 public class EditButton extends Button implements View.OnClickListener {
 
-    private EditText editText;
+    private List<EditText> editTexts;
 
     private boolean isEditMode = false;
 
@@ -38,29 +40,32 @@ public class EditButton extends Button implements View.OnClickListener {
     }
 
     private void init(AttributeSet attrs, int defStyle) {
+        editTexts = new ArrayList<EditText>();
         setOnClickListener(this);
     }
 
 
-    public void setEditText(EditText editText) {
-        this.editText = editText;
+    public void addEditText(EditText editText) {
+        this.editTexts.add(editText);
         setEditMode(isEditMode);
     }
 
     private void setEditMode(boolean editMode) {
         isEditMode = editMode;
 
-        editText.setFocusable(isEditMode);
-        editText.setFocusableInTouchMode(isEditMode);
-        editText.setCursorVisible(isEditMode);
-        editText.setClickable(isEditMode);
-        editText.setEnabled(isEditMode);
+        for(EditText editText : editTexts) {
+            editText.setFocusable(isEditMode);
+            editText.setFocusableInTouchMode(isEditMode);
+            editText.setCursorVisible(isEditMode);
+            editText.setClickable(isEditMode);
+            editText.setEnabled(isEditMode);
+        }
 
         setText((isEditMode == true) ? "SAVE" : "EDIT");
     }
     
     public void onClick(View v) {
-        if(editText == null) return;
+        if(editTexts == null) return;
 
         setEditMode(!isEditMode);
     }

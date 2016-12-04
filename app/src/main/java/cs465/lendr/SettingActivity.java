@@ -61,32 +61,32 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
         loc = (EditText) findViewById(R.id.Location);
         b1 = (EditButton) findViewById(R.id.EditButton1);
 
-        b1.setEditText(loc);
+        b1.addEditText(loc);
 
         pn = (EditText) findViewById(R.id.PhoneNumber);
         //b2 = (EditButton) findViewById(R.id.EditButton2);
 
-        //b2.setEditText(pn);
+        b1.addEditText(pn);
 
         cn = (EditText) findViewById(R.id.CardNumber);
         //b3 = (EditButton) findViewById(R.id.EditButton3);
 
-        //b3.setEditText(cn);
+        b1.addEditText(cn);
 
         name = (EditText) findViewById(R.id.Name);
         //b4 = (EditButton) findViewById(R.id.EditButton4);
 
-        //b4.setEditText(name);
+        b1.addEditText(name);
 
         ba = (EditText) findViewById(R.id.BillingAddress2);
         //b5 = (EditButton) findViewById(R.id.EditButton5);
 
-        //b5.setEditText(ba);
+        b1.addEditText(ba);
 
         ds = (EditText) findViewById(R.id.DeliverySetting2);
         //b6 = (EditButton) findViewById(R.id.EditButton6);
 
-        //b6.setEditText(ds);
+        b1.addEditText(ds);
     }
 
     @Override
