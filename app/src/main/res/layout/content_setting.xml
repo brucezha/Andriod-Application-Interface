@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="Your current location:"
+            android:textColor="#5c821a"
             />
         <!--component for enter password -->
         <EditText
@@ -40,6 +41,7 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="10dp"
             android:textSize="15dp"
+
             android:text="1000 W Main St Room101"
             android:background="@android:color/transparent"
             android:clickable="false"
@@ -57,6 +59,7 @@
             android:layout_below="@id/Location"
             android:layout_marginTop="10dp"
             android:textSize="20dp"
+            android:textColor="#5c821a"
             android:text="Your phone number:"
             />
         <!--component for enter password -->
@@ -85,6 +88,7 @@
             android:layout_marginTop="0dp"
             android:textSize="20dp"
             android:text="Payment:"
+            android:textColor="#5c821a"
             />
 
         <TextView
@@ -97,6 +101,7 @@
 
             android:textSize="17dp"
             android:text="Card:"
+            android:textColor="#5c821a"
             />
 
         <EditText
@@ -125,6 +130,7 @@
             android:layout_marginTop="10dp"
             android:textSize="17dp"
             android:text="Name On Card:"
+            android:textColor="#5c821a"
 
             />
 
@@ -153,6 +159,7 @@
             android:layout_below="@+id/Name"
             android:textSize="17dp"
             android:text="Billing Address:"
+            android:textColor="#5c821a"
 
             />
 
@@ -181,6 +188,7 @@
             android:layout_marginTop="0dp"
             android:textSize="20dp"
             android:text="Delivery Setting:"
+            android:textColor="#5c821a"
             />
 
         <EditText
